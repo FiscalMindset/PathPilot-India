@@ -19,6 +19,13 @@ Define the runtime-generated frontend architecture for PathPilot India so the fi
 - `component_contracts`
 - `responsive_layout_rules`
 - `trace_visualization_requirements`
+- `runtime_file_groups`
+- `judge_demo_surface_plan`
+
+## Generation References
+- `.claude/generation/frontend_generation_playbook.md`
+- `.claude/generation/runtime_file_generation_plan.md`
+- `.claude/domain/multilingual_and_inclusion_model.md`
 
 ## Mandatory UI Surfaces
 - global run header with status, active phase, elapsed time, retry count, warnings, and trust indicators
@@ -34,6 +41,8 @@ Define the runtime-generated frontend architecture for PathPilot India so the fi
 4. Provide user-centered navigation across onboarding, analysis, trace, and recommendations.
 5. Require clear labels for confidence, evidence, assumptions, retries, and fallback paths.
 6. Specify how live updates stream into the UI during agent execution.
+7. Specify the runtime-created file groups needed to realize the UI without writing actual code in this repo.
+8. Ensure the main dashboard visually proves that multiple agents collaborated.
 
 ## Handoffs
 - Sends component and layout contracts to the Backend Agent for API alignment.

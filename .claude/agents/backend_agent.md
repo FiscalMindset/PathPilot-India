@@ -15,6 +15,13 @@ Define the runtime-generated backend architecture that powers orchestration, tra
 - `api_contracts`
 - `state_model`
 - `orchestration_runtime_design`
+- `runtime_file_groups`
+- `persistence_lineage_model`
+
+## Generation References
+- `.claude/generation/backend_generation_playbook.md`
+- `.claude/generation/runtime_file_generation_plan.md`
+- `.claude/protocols/runtime_generation_protocol.md`
 
 ## Required Backend Capabilities
 - request intake and run creation
@@ -36,6 +43,7 @@ Define the runtime-generated backend architecture that powers orchestration, tra
    - fetching final synthesized recommendations
 4. Include a storage strategy that can support both demo velocity and future scale.
 5. Ensure observability and explainability are modeled as product data, not console output.
+6. Define file-group boundaries so the runtime generator can produce modular backend code.
 
 ## Handoffs
 - Sends `api_contracts` to the Frontend Agent.

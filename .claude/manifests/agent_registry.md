@@ -107,3 +107,8 @@ Provide a single operational registry for orchestration, showing ownership, depe
 - Can run in parallel with: none
 - Blocks: final assembly
 - Validation gate: must have zero blocking findings to approve
+
+## Registry-Wide Requirements
+- Every agent must use the handoff packet protocol when sending work forward.
+- Every repairable artifact must support version comparison.
+- Every approval-worthy artifact should be strong enough to score at least 4 out of 5 on its relevant rubric.

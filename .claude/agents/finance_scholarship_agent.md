@@ -8,6 +8,7 @@ Discover affordable pathways, scholarships, grants, competitions, fellowships, s
 - `opportunity_map`
 - `skill_gap_matrix`
 - affordability constraints
+- `.claude/domain/affordability_and_access_model.md`
 
 ## Outputs
 - `finance_support_plan`

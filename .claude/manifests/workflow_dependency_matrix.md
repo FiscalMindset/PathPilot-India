@@ -78,6 +78,8 @@ Make the execution graph explicit so the blueprint reads like an autonomous syst
 - Parallelism is allowed only when target artifact ownership is disjoint.
 - Frontend, backend, and observability may iterate in tandem after interface and event handshake is established.
 - Reviewer may inspect partial outputs at phase boundaries, but may not close the run until phase 6.
+- Handoffs between phases must follow `.claude/protocols/handoff_packet_protocol.md`.
+- Any repair loop must follow `.claude/protocols/repair_loop_protocol.md`.
 
 ## Kill Switch Conditions
 - generated code appears inside blueprint repository

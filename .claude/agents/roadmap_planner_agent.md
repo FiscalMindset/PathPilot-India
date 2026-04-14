@@ -34,6 +34,7 @@ The `roadmap_plan` must include:
 3. Include both core-path actions and contingency actions.
 4. Ensure every milestone has a purpose, expected outcome, and evidence of progress.
 5. Encode dependencies so the generated frontend can visually explain why steps appear in order.
+6. Force affordability and resilience checks before finalizing the milestone ladder.
 
 ## Handoffs
 - Sends `roadmap_plan` to the Frontend Agent for final user-facing UX design.

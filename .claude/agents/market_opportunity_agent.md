@@ -7,6 +7,8 @@ Map relevant opportunity landscapes for Indian students and early-stage entrepre
 - `user_profile`
 - `prompt_interpretation`
 - research instructions from `research_skill`
+- `.claude/domain/india_opportunity_taxonomy.md`
+- `.claude/domain/affordability_and_access_model.md`
 
 ## Outputs
 - `market_landscape`

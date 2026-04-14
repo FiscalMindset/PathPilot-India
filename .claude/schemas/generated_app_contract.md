@@ -24,6 +24,14 @@ Define the minimum scope and architecture of the application that this blueprint
 - final synthesis explanation panel
 - raw event and log drawer
 
+## Required Runtime-Generated Frontend Behaviors
+- live agent status updates
+- confidence and trust indicator rendering
+- source influence rendering
+- retry and fallback visibility
+- reviewer finding visibility when relevant
+- responsive panel transformations across breakpoints
+
 ## Required Runtime-Generated Backend Modules
 - run creation service
 - orchestration engine
@@ -34,6 +42,12 @@ Define the minimum scope and architecture of the application that this blueprint
 - recommendation synthesis service
 - reviewer and repair service
 - streaming or subscription gateway for live UI updates
+
+## Required Runtime-Generated Internal Contracts
+- artifact versioning
+- state journal support
+- reviewer score persistence
+- build manifest storage
 
 ## Required Runtime-Generated Data Models
 - runs
@@ -61,6 +75,7 @@ Define the minimum scope and architecture of the application that this blueprint
 - clear trust indicators
 - clear user value even when the trace is hidden
 - clear observability even when the user is focused on recommendations
+- clear India-context sensitivity around affordability, language, and access
 
 ## Disallowed Runtime Output
 - generic chatbot shell with no structured dashboard

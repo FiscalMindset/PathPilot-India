@@ -16,6 +16,11 @@ Design the full traceability model for the generated application so users and ju
 - `trace_schema`
 - `trust_indicator_model`
 - `failure_and_retry_display_rules`
+- `reviewer_visibility_rules`
+
+## Generation References
+- `.claude/generation/observability_generation_playbook.md`
+- `.claude/schemas/trace_event_schema.md`
 
 ## Required Coverage
 - run-level metrics
@@ -32,6 +37,7 @@ Design the full traceability model for the generated application so users and ju
 3. Create a trust model that combines source quality, freshness, confidence, validation status, and unresolved assumptions.
 4. Specify how raw events roll up into user-facing summaries without hiding complexity.
 5. Require the generated frontend to present both summarized and raw views of the run.
+6. Require reviewer findings and repairs to remain visible when they influenced the final result.
 
 ## Handoffs
 - Sends trace and event schema to Frontend and Backend Agents.

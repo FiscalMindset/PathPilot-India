@@ -7,6 +7,8 @@ Transform ambiguous user intent into a structured profile of motivations, streng
 - `prompt_interpretation`
 - any user-provided profile details
 - regional hints such as city, state, tier, language, or financial constraints
+- domain references in `.claude/domain/india_user_personas.md`
+- access rules in `.claude/domain/affordability_and_access_model.md`
 
 ## Outputs
 - `user_profile`
@@ -30,6 +32,7 @@ The `user_profile` must contain:
 4. Create 2-4 likely user archetypes only if the prompt is underspecified, then rank them by fit.
 5. Produce a structured profile artifact that downstream agents can use without reinterpretation.
 6. Highlight areas where follow-up personalization would materially improve recommendations in the generated app.
+7. Explicitly model affordability, language comfort, and support needs so downstream agents cannot ignore them.
 
 ## Handoffs
 - Sends `user_profile` to Market & Opportunities, Skill-Gap, Mentor & Network, Financial & Scholarship, Roadmap Planner, Wellness, and Entrepreneurship Agents.

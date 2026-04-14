@@ -51,7 +51,7 @@ The following constraints override all other preferences:
 6. Every major output must emerge from agent execution, not from hidden manual content.
 
 ## 5. What This Blueprint Contains
-This blueprint is composed of five operational layers plus the master document:
+This blueprint is composed of seven operational layers plus the master document:
 
 ### Agents
 Defined in `.claude/agents/`.
@@ -77,6 +77,14 @@ These files define coordination rules, explainability, no-hardcoding constraints
 Defined in `.claude/schemas/` and `.claude/manifests/`.
 These files make the system concrete through state schemas, artifact contracts, event models, workflow dependency maps, build contracts, and a registry-level view of the agent graph.
 
+### Execution Protocols
+Defined in `.claude/protocols/`.
+These files define how autonomy, handoffs, repair loops, runtime generation, and tool selection behave at execution time.
+
+### Competitive Rigor And Domain Models
+Defined in `.claude/rubrics/`, `.claude/domain/`, and `.claude/generation/`.
+These files strengthen judge-facing scoring performance, India-specific grounding, and the realism of runtime-generated file and module planning.
+
 ## 6. Problem Context
 PathPilot India is designed to address a real guidance gap in the Indian context:
 - many users lack personalized career support
@@ -85,6 +93,22 @@ PathPilot India is designed to address a real guidance gap in the Indian context
 - users need not just advice, but explainable pathways, visible reasoning, and step-by-step execution support
 
 The generated application must feel like an opportunity navigator with traceable intelligence, not a generic chatbot dressed up with career wording.
+
+## 6A. India-Specific Domain Modeling
+This blueprint must reason about Indian users through structured domain models rather than superficial localization.
+
+The authoritative domain references live in:
+- `.claude/domain/india_user_personas.md`
+- `.claude/domain/india_opportunity_taxonomy.md`
+- `.claude/domain/affordability_and_access_model.md`
+- `.claude/domain/multilingual_and_inclusion_model.md`
+
+These files must shape:
+- user profiling
+- pathway prioritization
+- affordability checks
+- multilingual readiness
+- entrepreneurship activation
 
 ## 7. Target Users
 The generated application must be capable of serving:
@@ -210,6 +234,9 @@ Its responsibilities are to:
 The authoritative workflow graph lives in:
 - `.claude/workflows/`
 - `.claude/manifests/workflow_dependency_matrix.md`
+- `.claude/protocols/autonomous_execution_protocol.md`
+- `.claude/protocols/handoff_packet_protocol.md`
+- `.claude/protocols/repair_loop_protocol.md`
 
 ## 13. Execution Phases
 Every run must follow these phases.
@@ -324,6 +351,23 @@ The system must rely on the workflows in `.claude/workflows/` to move from:
 
 No critical stage may be skipped through ad hoc direct generation.
 
+## 18A. Runtime Generation Playbooks
+To maximize automation depth and architecture quality, final assembly must use generation playbooks instead of generic code synthesis.
+
+The authoritative playbooks live in:
+- `.claude/generation/runtime_file_generation_plan.md`
+- `.claude/generation/frontend_generation_playbook.md`
+- `.claude/generation/backend_generation_playbook.md`
+- `.claude/generation/observability_generation_playbook.md`
+- `.claude/generation/validation_and_demo_playbook.md`
+
+These playbooks define:
+- what file groups the runtime system must create
+- how the UI should differentiate itself from a generic chat app
+- how the backend must preserve lineage and replay
+- how observability must be rendered
+- how the generated app should be validated for judging
+
 ## 19. MCP And Tool Integration Rules
 The blueprint must actively encourage real tool use where it improves quality.
 
@@ -340,6 +384,9 @@ Tool rules:
 4. Use GitHub tools only for publishing or collaborating on the generated application in a separate repository if needed.
 5. Tool calls must be represented in the trace model.
 
+Tool selection behavior is governed by:
+- `.claude/protocols/tool_selection_protocol.md`
+
 ## 20. Research Rules
 When a recommendation depends on external facts, the system must:
 - prefer official or primary sources
@@ -353,6 +400,8 @@ Research rules are implemented through:
 - `.claude/agents/market_opportunity_agent.md`
 - `.claude/agents/finance_scholarship_agent.md`
 - `.claude/tools/browser_mcp.md`
+- `.claude/domain/india_opportunity_taxonomy.md`
+- `.claude/domain/affordability_and_access_model.md`
 
 ## 21. Frontend Generation Requirements
 The runtime-generated frontend must use a modern React-based architecture and must be observability-first.
@@ -386,6 +435,8 @@ The output contract for the generated app is defined in:
 - `.claude/agents/frontend_agent.md`
 - `.claude/skills/ui_generation_skill.md`
 - `.claude/schemas/generated_app_contract.md`
+- `.claude/generation/frontend_generation_playbook.md`
+- `.claude/generation/runtime_file_generation_plan.md`
 
 ## 22. Backend Generation Requirements
 The runtime-generated backend must support:
@@ -410,6 +461,8 @@ The output contract for the generated app is defined in:
 - `.claude/agents/backend_agent.md`
 - `.claude/skills/backend_design_skill.md`
 - `.claude/schemas/generated_app_contract.md`
+- `.claude/generation/backend_generation_playbook.md`
+- `.claude/generation/runtime_file_generation_plan.md`
 
 ## 23. Observability Requirements
 Observability is a first-class user feature and a judging feature.
@@ -455,6 +508,7 @@ The authoritative event model lives in:
 - `.claude/schemas/trace_event_schema.md`
 - `.claude/agents/observability_agent.md`
 - `.claude/skills/observability_skill.md`
+- `.claude/generation/observability_generation_playbook.md`
 
 ## 24. Explainability Rules
 The system must be able to answer, from the frontend alone:
@@ -495,6 +549,12 @@ Validation cannot be superficial. It must yield:
 - acceptance rule for each repair
 - final approval decision
 
+The Reviewer Agent must score outputs against:
+- `.claude/rubrics/prompt_interpretation_rubric.md`
+- `.claude/rubrics/agent_coordination_rubric.md`
+- `.claude/rubrics/architecture_quality_rubric.md`
+- `.claude/rubrics/automation_depth_rubric.md`
+
 ## 26. Retry And Repair Rules
 Repairs must be:
 - narrow
@@ -524,6 +584,7 @@ The final assembly stage must:
 - generate frontend, backend, observability, and test code in a separate target workspace
 - preserve provenance from blueprint artifact to generated output
 - ensure no code is written into this repository
+- follow the runtime generation and file-group playbooks for coherent output
 
 The runtime build contract is defined in:
 - `.claude/workflows/final_application_assembly.md`
@@ -585,4 +646,6 @@ This blueprint wins by being:
 - repairable
 - observable
 - autonomous
+- domain-grounded
+- judge-readable
 - fully aligned with the challenge rules
