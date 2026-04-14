@@ -20,6 +20,7 @@ Generate the actual PathPilot India application at runtime in a target workspace
 6. Run acceptance checks against the generated application contract.
 7. Validate the produced app against `.claude/generation/runtime_acceptance_matrix.md`.
 8. Validate that the produced app reflects the approved artifacts rather than ad hoc drift.
+9. Reject the build if the generated application summary indicates placeholder-heavy implementation or minimal-stack downgrade.
 
 ## Exit Criteria
 - runtime application includes required user features

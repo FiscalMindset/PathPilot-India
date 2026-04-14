@@ -10,6 +10,14 @@ Guide runtime generation of a backend that can support live multi-agent executio
 - visible repairs
 - streaming updates
 - final synthesis lineage
+- framework-based implementation depth
+
+## Default Stack Direction
+- FastAPI or equivalent structured backend framework
+- typed schemas for requests, responses, events, and artifacts
+- modular package layout
+- SQLite or equivalent persistence for demo-ready local execution
+- SSE or websocket support for live run updates
 
 ## Required Service Boundaries
 - run lifecycle service
@@ -31,3 +39,5 @@ Guide runtime generation of a backend that can support live multi-agent executio
 - do not generate a backend that cannot replay or inspect completed runs
 - do not hide orchestration state in transient-only memory
 - do not reduce final outputs to a single opaque recommendation blob
+- do not default to a standard-library-only HTTP server
+- do not replace real services with thin placeholder endpoints

@@ -31,6 +31,8 @@ Define the minimum scope and architecture of the application that this blueprint
 - retry and fallback visibility
 - reviewer finding visibility when relevant
 - responsive panel transformations across breakpoints
+- modular component architecture
+- non-empty observability views with meaningful artifact content
 
 ## Required Runtime-Generated Backend Modules
 - run creation service
@@ -42,6 +44,14 @@ Define the minimum scope and architecture of the application that this blueprint
 - recommendation synthesis service
 - reviewer and repair service
 - streaming or subscription gateway for live UI updates
+
+## Required Runtime-Generated Stack Baseline
+- framework-based frontend, preferably React with TypeScript
+- framework-based backend, preferably FastAPI or equivalent
+- dependency manifests for the chosen stack
+- real modular source organization
+- seed or demo data when live sources are unavailable
+- smoke-test or verification artifacts in the generated app
 
 ## Required Runtime-Generated Internal Contracts
 - artifact versioning
@@ -82,3 +92,6 @@ Define the minimum scope and architecture of the application that this blueprint
 - opaque recommendations without lineage
 - frontend observability hidden behind developer tools
 - backend with no persisted trace or repair history
+- vanilla static frontend as the default architecture
+- standard-library-only backend as the default architecture
+- placeholder-heavy core flows

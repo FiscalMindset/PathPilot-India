@@ -70,17 +70,29 @@ Translate the generated PathPilot India application requirements into a crisp ac
 - responsive from mobile to desktop
 - not chat-only
 - observability visible without developer tools
+- built with a modern component-based framework
+- contains meaningful populated screens, not empty placeholders
 
 ### Backend
 - run lifecycle supported
 - artifact and trace persistence supported
 - reviewer and repair loop supported
 - lineage supported
+- built with a real application framework and modular services
+- not implemented as a minimal stdlib-only server by default
 
 ### Runtime Integrity
 - generated code lives outside the blueprint repo
 - build manifest references approved artifacts
 - generated app reflects validated specs rather than ad hoc drift
+- generated app includes dependency manifests and runnable project structure
+- generated app includes demo-ready seeded data or meaningful local fixtures when live integrations are absent
+
+### Implementation Depth
+- core user flows are implemented, not stubbed
+- observability surfaces render meaningful trace content
+- roadmap, finance, mentor, and opportunity sections all contain structured content
+- summary text does not describe the system as “placeholder-heavy” or “for future enhancement”
 
 ## Pass Rule
 The runtime-generated application is acceptable only when every category above is satisfied or explicitly marked out-of-scope by the original prompt and approved by the Reviewer Agent.

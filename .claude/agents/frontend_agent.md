@@ -25,6 +25,8 @@ Define the runtime-generated frontend architecture for PathPilot India so the fi
 ## Generation References
 - `.claude/generation/frontend_generation_playbook.md`
 - `.claude/generation/runtime_file_generation_plan.md`
+- `.claude/generation/technology_stack_requirements.md`
+- `.claude/generation/demo_fidelity_playbook.md`
 - `.claude/domain/multilingual_and_inclusion_model.md`
 
 ## Mandatory UI Surfaces
@@ -43,6 +45,8 @@ Define the runtime-generated frontend architecture for PathPilot India so the fi
 6. Specify how live updates stream into the UI during agent execution.
 7. Specify the runtime-created file groups needed to realize the UI without writing actual code in this repo.
 8. Ensure the main dashboard visually proves that multiple agents collaborated.
+9. Default to a framework-grade frontend stack rather than a static page architecture.
+10. Require meaningful populated states for all primary screens, using seeded demo artifacts when necessary.
 
 ## Handoffs
 - Sends component and layout contracts to the Backend Agent for API alignment.

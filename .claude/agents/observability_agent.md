@@ -20,6 +20,7 @@ Design the full traceability model for the generated application so users and ju
 
 ## Generation References
 - `.claude/generation/observability_generation_playbook.md`
+- `.claude/generation/demo_fidelity_playbook.md`
 - `.claude/schemas/trace_event_schema.md`
 
 ## Required Coverage
@@ -38,6 +39,7 @@ Design the full traceability model for the generated application so users and ju
 4. Specify how raw events roll up into user-facing summaries without hiding complexity.
 5. Require the generated frontend to present both summarized and raw views of the run.
 6. Require reviewer findings and repairs to remain visible when they influenced the final result.
+7. Require seeded or replayable traces when live execution alone would leave the dashboard empty during evaluation.
 
 ## Handoffs
 - Sends trace and event schema to Frontend and Backend Agents.

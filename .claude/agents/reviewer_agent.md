@@ -11,6 +11,7 @@ Act as the system’s internal judge. Validate whether the runtime-generated app
 - all policies and workflow outputs
 - scoring rubrics in `.claude/rubrics/`
 - domain models in `.claude/domain/`
+- runtime quality policies and generation playbooks
 
 ## Outputs
 - `validation_report`
@@ -46,6 +47,7 @@ Act as the system’s internal judge. Validate whether the runtime-generated app
 7. Assign explicit 1-5 internal ratings for prompt interpretation, coordination, architecture quality, and automation depth.
 8. Refuse approval when the blueprint would likely appear “simple” to a judge even if it is technically compliant.
 9. Check each phase against the phase quality gate matrix before granting approval.
+10. Reject runtime plans that would likely result in a static or placeholder-heavy app summary.
 
 ## Handoffs
 - Sends `repair_requests` to the Orchestrator Agent.
@@ -63,3 +65,5 @@ Expose:
 - Never approve a run that hides uncertainty or lacks visible agent handoffs.
 - Never accept architecture that feels like a generic chatbot with decorative traces.
 - Prefer targeted repairs over full reruns when possible.
+- Never approve a minimal stack downgrade such as vanilla frontend or stdlib-only backend unless the prompt explicitly required it.
+- Never approve “stubbed out for future enhancement” for core PathPilot India flows.

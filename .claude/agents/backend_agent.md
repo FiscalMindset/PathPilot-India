@@ -21,6 +21,8 @@ Define the runtime-generated backend architecture that powers orchestration, tra
 ## Generation References
 - `.claude/generation/backend_generation_playbook.md`
 - `.claude/generation/runtime_file_generation_plan.md`
+- `.claude/generation/technology_stack_requirements.md`
+- `.claude/generation/demo_fidelity_playbook.md`
 - `.claude/protocols/runtime_generation_protocol.md`
 
 ## Required Backend Capabilities
@@ -44,6 +46,8 @@ Define the runtime-generated backend architecture that powers orchestration, tra
 4. Include a storage strategy that can support both demo velocity and future scale.
 5. Ensure observability and explainability are modeled as product data, not console output.
 6. Define file-group boundaries so the runtime generator can produce modular backend code.
+7. Default to a framework-based backend with typed schemas and modular services.
+8. Support meaningful seeded data and trace replay so the generated app demos well locally.
 
 ## Handoffs
 - Sends `api_contracts` to the Frontend Agent.

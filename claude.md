@@ -85,6 +85,10 @@ These files define how autonomy, handoffs, repair loops, runtime generation, and
 Defined in `.claude/rubrics/`, `.claude/domain/`, and `.claude/generation/`.
 These files strengthen judge-facing scoring performance, India-specific grounding, and the realism of runtime-generated file and module planning.
 
+### Runtime Quality Floor
+Defined in `.claude/policies/runtime_quality_floor.md` and generation playbooks.
+These files prevent the generator from choosing a shallow static stack or placeholder-heavy implementation when a more serious framework-based build is expected.
+
 ## 6. Problem Context
 PathPilot India is designed to address a real guidance gap in the Indian context:
 - many users lack personalized career support
@@ -93,6 +97,7 @@ PathPilot India is designed to address a real guidance gap in the Indian context
 - users need not just advice, but explainable pathways, visible reasoning, and step-by-step execution support
 
 The generated application must feel like an opportunity navigator with traceable intelligence, not a generic chatbot dressed up with career wording.
+It must also feel like a real application build, not a lightweight proof-of-concept scaffold.
 
 ## 6A. India-Specific Domain Modeling
 This blueprint must reason about Indian users through structured domain models rather than superficial localization.
@@ -119,6 +124,16 @@ The generated application must be capable of serving:
 - users balancing affordability and ambition
 - aspiring founders, freelancers, and small-business starters
 - users needing sustainable pacing and support accountability
+
+## 7A. Depth Requirement
+The generated application must be implemented deeply enough to demo convincingly without relying on “future enhancement” placeholders for core flows.
+
+Default expectation:
+- modern framework-based frontend
+- modern framework-based backend
+- modular code organization
+- demo-ready seeded data and traces if live sources are unavailable
+- meaningful implementation across all primary PathPilot India surfaces
 
 ## 8. Single Prompt Initiation Contract
 The system must start from a single high-level prompt without requiring a human to break the problem down manually.
@@ -368,9 +383,12 @@ These playbooks define:
 - how the backend must preserve lineage and replay
 - how observability must be rendered
 - how the generated app should be validated for judging
+- how demo fidelity should be preserved even without live integrations
 
 The runtime-generated app must also satisfy:
 - `.claude/generation/runtime_acceptance_matrix.md`
+- `.claude/generation/demo_fidelity_playbook.md`
+- `.claude/generation/technology_stack_requirements.md`
 
 ## 19. MCP And Tool Integration Rules
 The blueprint must actively encourage real tool use where it improves quality.
@@ -441,6 +459,7 @@ The output contract for the generated app is defined in:
 - `.claude/schemas/generated_app_contract.md`
 - `.claude/generation/frontend_generation_playbook.md`
 - `.claude/generation/runtime_file_generation_plan.md`
+- `.claude/generation/technology_stack_requirements.md`
 
 ## 22. Backend Generation Requirements
 The runtime-generated backend must support:
@@ -467,6 +486,7 @@ The output contract for the generated app is defined in:
 - `.claude/schemas/generated_app_contract.md`
 - `.claude/generation/backend_generation_playbook.md`
 - `.claude/generation/runtime_file_generation_plan.md`
+- `.claude/generation/technology_stack_requirements.md`
 
 ## 23. Observability Requirements
 Observability is a first-class user feature and a judging feature.
@@ -559,6 +579,7 @@ The Reviewer Agent must score outputs against:
 - `.claude/rubrics/architecture_quality_rubric.md`
 - `.claude/rubrics/automation_depth_rubric.md`
 - `.claude/manifests/phase_quality_gate_matrix.md`
+- `.claude/policies/runtime_quality_floor.md`
 
 ## 26. Retry And Repair Rules
 Repairs must be:
@@ -591,6 +612,7 @@ The final assembly stage must:
 - ensure no code is written into this repository
 - follow the runtime generation and file-group playbooks for coherent output
 - validate the generated application against the runtime acceptance matrix
+- reject minimal static-stack or placeholder-heavy builds
 
 The runtime build contract is defined in:
 - `.claude/workflows/final_application_assembly.md`
