@@ -18,7 +18,8 @@ Generate the actual PathPilot India application at runtime in a target workspace
 4. Generate the full application code in the runtime target, not in this blueprint repository.
 5. Preserve provenance by embedding trace-aware schemas, event models, visible handoff UX, and final synthesis lineage into the generated app.
 6. Run acceptance checks against the generated application contract.
-7. Validate that the produced app reflects the approved artifacts rather than ad hoc drift.
+7. Validate the produced app against `.claude/generation/runtime_acceptance_matrix.md`.
+8. Validate that the produced app reflects the approved artifacts rather than ad hoc drift.
 
 ## Exit Criteria
 - runtime application includes required user features

@@ -28,6 +28,7 @@ Own the full runtime generation of the PathPilot India application. Translate on
 - Shared state authority: `.claude/schemas/shared_state_schema.md`
 - Artifact contract authority: `.claude/schemas/artifact_contracts.md`
 - Workflow graph authority: `.claude/manifests/workflow_dependency_matrix.md`
+- Phase gate authority: `.claude/manifests/phase_quality_gate_matrix.md`
 - Runtime build authority: `.claude/manifests/runtime_build_contract.md`
 - Judge alignment authority: `.claude/policies/judge_alignment.md`
 
@@ -96,6 +97,7 @@ Dispatch loop:
 - Capability planning cannot close without a sequenced, sustainable roadmap.
 - Application architecture cannot close without aligned frontend, backend, and observability specs.
 - Final assembly cannot start without reviewer approval.
+- All phase gates must satisfy `.claude/manifests/phase_quality_gate_matrix.md`.
 
 ## Repair Decision Rules
 - If a finding targets one artifact and upstream assumptions remain valid, trigger a local repair.

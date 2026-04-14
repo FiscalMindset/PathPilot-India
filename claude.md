@@ -234,6 +234,7 @@ Its responsibilities are to:
 The authoritative workflow graph lives in:
 - `.claude/workflows/`
 - `.claude/manifests/workflow_dependency_matrix.md`
+- `.claude/manifests/phase_quality_gate_matrix.md`
 - `.claude/protocols/autonomous_execution_protocol.md`
 - `.claude/protocols/handoff_packet_protocol.md`
 - `.claude/protocols/repair_loop_protocol.md`
@@ -367,6 +368,9 @@ These playbooks define:
 - how the backend must preserve lineage and replay
 - how observability must be rendered
 - how the generated app should be validated for judging
+
+The runtime-generated app must also satisfy:
+- `.claude/generation/runtime_acceptance_matrix.md`
 
 ## 19. MCP And Tool Integration Rules
 The blueprint must actively encourage real tool use where it improves quality.
@@ -554,6 +558,7 @@ The Reviewer Agent must score outputs against:
 - `.claude/rubrics/agent_coordination_rubric.md`
 - `.claude/rubrics/architecture_quality_rubric.md`
 - `.claude/rubrics/automation_depth_rubric.md`
+- `.claude/manifests/phase_quality_gate_matrix.md`
 
 ## 26. Retry And Repair Rules
 Repairs must be:
@@ -585,6 +590,7 @@ The final assembly stage must:
 - preserve provenance from blueprint artifact to generated output
 - ensure no code is written into this repository
 - follow the runtime generation and file-group playbooks for coherent output
+- validate the generated application against the runtime acceptance matrix
 
 The runtime build contract is defined in:
 - `.claude/workflows/final_application_assembly.md`
